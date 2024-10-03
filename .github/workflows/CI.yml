@@ -15,11 +15,11 @@ jobs:
     - uses: actions/checkout@v3
     - name: Login Dockerhub
       env:
-        davidocta154: ${{secrets.davidocta154}}
-        naylaAhsa12: ${{secrets.naylaAhsa12}}
-      run: docker login -u $davidocta154 -p $naylaAhsa12
+        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
     - name: Build docker image
-      run: docker build -t davidocta154/backend-magan .
+      run: docker build -t grizelle21/MagangKG7 .
     - name: Publish image to docker hub
-      run: docker push davidocta154/backend-magan:latest
+      run: docker push grizelle21/MagangKG7:latest
