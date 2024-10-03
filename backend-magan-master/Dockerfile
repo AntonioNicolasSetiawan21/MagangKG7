@@ -5,9 +5,8 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Salin file package.json dan package-lock.json
-COPY package*.json ./
+COPY package*.json .
 
-# Install dependensi proyek
 RUN npm install
 RUN npm install -g typescript
 # Salin semua file aplikasi
